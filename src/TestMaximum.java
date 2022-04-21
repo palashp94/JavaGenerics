@@ -1,18 +1,24 @@
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class TestMaximum {
     public static void main(String[] args) {
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Please Enter Three Numbers to check Maximum ");
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please Enter the 3 Numbers to check Maximum ");
 
-        int x = scanner.nextInt();
-        int y = scanner.nextInt();
-        int z = scanner.nextInt();
+        ArrayList<Float> floats = new ArrayList<>();
+        Float x = scan.nextFloat();
+        Float y = scan.nextFloat();
+        Float z = scan.nextFloat();
+        floats.add(x);
+        floats.add(y);
+        floats.add(z);
 
-
+        System.out.println(floats);
+        maxOfNumber(x,y,z);
     }
 
-    public static <T extends Integer> T maxOfNumber(T x, T y, T z) {
+    public static <T extends Float> T maxOfNumber(T x, T y, T z) {
         T max = x;
         if (y.compareTo(max) > 0) {
             max = y;
