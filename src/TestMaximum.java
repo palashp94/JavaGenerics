@@ -1,32 +1,17 @@
-import java.util.ArrayList;
-import java.util.Scanner;
-
 public class TestMaximum {
-    public static void main(String[] args) {
-        Scanner scan = new Scanner(System.in);
-        System.out.println("Please Enter the 3 Words to Check Maximum ");
+        public static void main(String[] args) {
 
-        ArrayList<String> string = new ArrayList<>();
-        String x = scan.next();
-        String y = scan.next();
-        String z = scan.next();
-        string.add(x);
-        string.add(y);
-        string.add(z);
+            MaxOfNumber<Integer> mainFirst = new MaxOfNumber<>(11, 23, 62);
+            MaxOfNumber<Float> mainSecond = new MaxOfNumber<>(10.0f, 4.4f, 5.9f);
+            MaxOfNumber<String> mainThird = new MaxOfNumber<>("Mango", "JackFruit", "Banana");
 
-        System.out.println(string);
-        maxOfNumber(x,y,z);
+            Integer maxInt = mainFirst.maximum();
+            Float maxFloat = mainSecond.maximum();
+            String maxString = mainThird.maximum();
+
+            System.out.println("maximum integer is: " + maxInt);
+            System.out.println("maximum float is: " + maxFloat);
+            System.out.println("maximum String is: " + maxString);
+        }
     }
 
-    public static <T extends String> T maxOfNumber(T x, T y, T z) {
-        T max = x;
-        if (y.compareTo(max) > 0) {
-            max = y;
-        }
-        if (z.compareTo(max) > 0) {
-            max = z;
-        }
-        System.out.println(max);
-        return max;
-    }
-}
